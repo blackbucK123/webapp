@@ -8,3 +8,5 @@ git clone [<repo-link>](https://github.com/blackbucK123/webapp.git)https://githu
 cd web-app <br />
 npm install <br />
 ng serve <br />
+
+#### Open browser and test http://localhost:4200/
