@@ -1,0 +1,14 @@
+li{
+    cursor: pointer;
+}
+.date-btn{
+    justify-content: space-between;
+}
+.disabled {
+    pointer-events:none; 
+    opacity:0.6;         
+}
+.schedule-row{
+    display: flex;
+    align-items: center;
+}

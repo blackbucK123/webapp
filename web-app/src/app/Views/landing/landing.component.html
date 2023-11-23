@@ -1,0 +1,27 @@
+
+<app-jumbotron></app-jumbotron>
+<div class="container-fluid action-menu">
+    <div>
+        <img class="logo" src="../../../assets/logo.png" />
+    </div>
+    
+    <div class="btn-grp d-flex gap-2">
+        <div class="intro-text"> Tournament registration and bookings </div>
+    <!--     <button class="custom-btn d-inline-flex align-items-center btn btn-dark btn-lg px-4 rounded-pill">
+          Tournament Registeration
+        </button> -->
+        <a href="https://form.jotform.com/231833975002454" class="btn btn-dark rounded-pill btn-lg px-4 " tabindex="-1" role="button">Tournament Registeration</a>
+        <button class="custom-btn btn btn-outline-secondary btn-lg px-4 rounded-pill" (click)="btnClick()">
+          Bookings
+        </button>
+       <!--  <nav>
+            <a routerLink="/register" class="custom-btn btn btn-outline-secondary btn-lg px-4 rounded-pill" tabindex="-1" role="button" >Bookings</a>
+        </nav> -->
+     
+      </div>
+</div>
+
+<div class="container-fluid card-holder">
+    <app-card></app-card>
+    <app-card></app-card>
+</div>
