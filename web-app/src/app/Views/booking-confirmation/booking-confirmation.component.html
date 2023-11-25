@@ -96,10 +96,26 @@
   
             <hr class="my-4">
   
-            <button class="w-100 btn btn-dark w-50 py-2 rounded-pill" type="submit">Continue to checkout</button>
+            <button (click)="open(mymodal)" class="w-100 btn btn-dark w-50 py-2 rounded-pill" type="button">Continue to checkout</button>
           </form>
         </div>
       </div>
+      <ng-template #mymodal let-modal>
+        
+          
+            <div class="modal-content rounded-3 shadow" data-bs-backdrop="static">
+              <div class="border-bottom-0 text-center py-3">
+                <h1 class="modal-title fs-5 ">Payment Successfull</h1>
+                <img src="../../../assets/Checkmark.gif" class="check-mark" />
+              </div>
+              <div class="modal-body text-center py-0">
+                <p>Redirecting in {{display}} seconds...</p>
+              </div>
+          
+            </div>
+          
+       
+    </ng-template>
     </main>
  
   </div>
