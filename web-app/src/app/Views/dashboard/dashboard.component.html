@@ -1,1 +1,88 @@
-<p>dashboard works!</p>
+<div class="container">
+    <main>
+ 
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+           
+            <span class="fs-4">Dashboard</span>
+          </a>
+        </header>
+    
+    
+        <div class="row align-items-md-stretch">
+            <div class="col-md-3">
+                <div class="row align-items-md-stretch">
+                    <div class="h-50 p-5 bg-body-tertiary border rounded-3">
+                        <h4>Users</h4>
+                        <h1 class="card-title pricing-card-title">+<small class="text-body-secondary fw-light"> 2</small></h1>
+                        <p> New users added, please click to view/manage</p>
+                        <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-users')">View/Manage</button>
+                      </div>
+                </div>
+                <div class="row align-items-md-stretch">
+                    <div class="h-50 p-5 bg-body-tertiary border rounded-3">
+                        <h4>Offers/Coupons</h4>
+                        <h1 class="card-title pricing-card-title">+<small class="text-body-secondary fw-light">0</small></h1>
+                        <p> Please click to view new offers/coupons</p>
+                        <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-coupon')">View</button>
+                      </div>
+                </div>
+               
+              </div>
+          <div class="col-md-5">
+            <div class="h-100 p-5 text-bg-dark rounded-3 booking-text">
+              <h1>Bookings</h1>
+              <div>
+                <span class="booking-number card-title pricing-card-title ">+<span class="text-body-light fw-light ">3</span></span>
+                <h5 class="text-body-light fw-light py-2">New bookings added, please <br /> click to view</h5>
+                <button class="btn btn-outline-light rounded-pill btn-lg" type="button" (click)="btnClick('manage-bookings')">View</button>
+              </div>
+         
+             
+            </div>
+          </div>
+          <div class="col-md-4 align-items-md-stretch action-buton-col">
+            <div class="row  py-3 border bg-body-tertiary rounded-3">
+                <div class="col-md-8 h-100 py-3 px-3 button-legend-col1">
+                    <h2>Slots</h2>
+                    <p></p>
+                    <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-tournament')">View</button>
+                  </div>
+                  <div class="col-md-4 h-100 button-legend-col2">
+                    <img class="legend-icon" src="../../../assets/calendar.png" />
+                    <p></p>
+                    <p></p>
+                  </div>
+            </div>
+            <div class="row py-3 align-items-md-stretch border bg-body-tertiary rounded-3">
+                <div class="col-md-8 h-100 py-3 px-3 button-legend-col1">
+                    <h2>Venue/Courts</h2>
+                    <p></p>
+                    <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-courts')">View</button>
+                  </div>
+                  <div class="col-md-4 h-100 button-legend-col2">
+                    <img class="legend-icon" src="../../../assets/basketball-court.png" />
+                    <p></p>
+                    <p></p>
+                  </div>
+            </div>
+         
+            <div class="row py-3 align-items-md-stretch border bg-body-tertiary rounded-3">
+                <div class="col-md-8 h-100 py-3 px-3 button-legend-col1">
+                    <h2>Payments</h2>
+                    <p></p>
+                    <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-payments')">View</button>
+                  </div>
+                  <div class="col-md-4 h-100 button-legend-col2">
+                    <img class="legend-icon" src="../../../assets/payment.png" />
+                    <p></p>
+                    <p></p>
+                  </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+</div>

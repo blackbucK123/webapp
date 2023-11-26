@@ -8,7 +8,7 @@
             <nav class="breadcrumb-divider" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0">
                   <li (click)="btnClick('dashboard')" class="breadcrumb-item"><a class="text-body-secondary fw-light text-decoration-none">Dashboard</a></li>
-                  <li (click)="btnClick('manage-courts')" class="breadcrumb-item active" aria-current="page">Courts</li>
+                  <li (click)="btnClick('manage-courts')" class="breadcrumb-item active" aria-current="page">Slots</li>
                 </ol>
               </nav>
             </h4>
@@ -20,36 +20,48 @@
                 <tr class="row-item-success">
                   <th scope="col">Location</th>
                   <th scope="col">Courts</th>
-                 
+                  <th scope="col" colspan="2">Slots</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td rowspan="2" colspan="1">Gachibowli Stadium</td>
-                  <td>Court 1</td>            
+                  <td>Court 1</td>   
+                  <td>10:00-11:00</td>   
+                  <td>12:00-01:00</td>            
                 </tr>
                 <tr>
                 <td>
                     Court 2
                 </td>
+                <td>09:00-10:00</td>   
+                <td>11:00-12:00</td>       
                 </tr>
                 <tr>
                     <td rowspan="2">Apollo Banjara Club</td>
-                    <td>Court 1</td>            
+                    <td>Court 1</td>     
+                    <td>10:00-11:00</td>   
+                    <td>12:00-01:00</td>             
                   </tr>
                   <tr>
                   <td>
                       Court 2
                   </td>
+                  <td>12:00-01:00</td> 
+                  <td>11:00-12:00</td>           
                   </tr>
                   <tr>
                     <td rowspan="2">Jubilee Hills Basketball Club</td>
-                    <td>Court 1</td>            
+                    <td>Court 1</td>
+                    <td>09:00-10:00</td>   
+                    <td>11:00-12:00</td>                  
                   </tr>
                   <tr>
                   <td>
                       Court 2
                   </td>
+                  <td>12:00-01:00</td>   
+                  <td>01:00-02:00</td>   
                   </tr>
               </tbody>
             </table>

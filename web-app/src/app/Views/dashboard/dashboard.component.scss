@@ -1,0 +1,27 @@
+.booking-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.booking-number{
+    font-size: 6rem;
+}
+.legend-icon{
+    width: 70%;
+}
+.button-legend-col1{
+    display: flex;
+    flex-direction: column;
+}
+.button-legend-col2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
+}
+.action-buton-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

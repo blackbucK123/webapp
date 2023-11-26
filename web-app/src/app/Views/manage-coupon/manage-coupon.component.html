@@ -1,1 +1,40 @@
-<p>manage-coupon works!</p>
+<div class="container">
+    <main>
+ 
+      <div class="container py-4">
+        <header class="pb-3 mb-4  border-bottom">
+          <a class="d-flex align-items-center text-body-emphasis text-decoration-none">
+           <h4>
+            <nav class="breadcrumb-divider" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                  <li (click)="btnClick('dashboard')" class="breadcrumb-item"><a class="text-body-secondary fw-light text-decoration-none">Dashboard</a></li>
+                  <li (click)="btnClick('manage-coupon')" class="breadcrumb-item active" aria-current="page">Coupons</li>
+                </ol>
+              </nav>
+            </h4>
+          </a>
+        </header>
+<!--         <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  No Coupons Available
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong class="fs-2">If booking count > 5 = 1 Coupon</strong> <br /> <span class="fw-light fs-6">Current booking count = 3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+ -->
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-secondary">No Coupons Available</li>
+            <li class="list-group-item">
+                <strong class="fs-2">If booking count > 5 = 1 Coupon</strong> <br /> 
+            </li>
+            <li class="list-group-item "><span class="fw-light fs-6">Current booking count = 3</span></li>
+          </ul>
+          
+    </div>

@@ -12,11 +12,11 @@
           <label for="floatingInput">Second name</label>
           </div>
           <div class="form-floating">
-            <input type="mobile" class="form-control" id="floatingInput" placeholder="+9xx - 999 999 9999">
+            <input type="mobile" class="form-control" id="floatingInput" placeholder="+9xx - 999 999 9999" required pattern="[- +()0-9]{10,12}" minlength="10" maxlength="10" (keydown)="validateNumber($event)">
             <label for="floatingInput">Mobile</label>
           </div>
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control"  id="floatingPassword" placeholder="Password" #box (keyup.enter)="onEnter(box.value)" (blur)="onEnter(box.value)" minlength="6" maxlength="6" (keydown)="validateNumber($event)">
             <label for="floatingPassword">OTP</label>
           </div>
       
@@ -24,10 +24,13 @@
         
           </div>
           <div class="btn-grp">
-            <button class="custom-btn btn btn-dark w-50 py-2 rounded-pill" type="submit" (click)="btnClick()">Register</button>
+            <button [disabled]="!box.value" class="custom-btn btn btn-dark w-50 py-2 rounded-pill" type="button" (click)="register()">
+              <span role="status px-2">Register</span> 
+              <span *ngIf="display" class="spinner-border spinner-border-sm spin" aria-hidden="true"></span>
+            </button>
          
-            <button class="custom-btn btn btn-link-dark py-2" type="submit" (click)="btnClick()">Already registered? </button>
-            
+            <button class="custom-btn btn btn-link-dark py-2" type="button" (click)="btnClick()">
+              Already registered? </button>
           </div>
          
         </form>

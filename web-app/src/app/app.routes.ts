@@ -16,7 +16,8 @@ import { ScheduleComponent } from './Views/schedule/schedule.component';
 import { TournamentListComponent } from './Views/tournament-list/tournament-list.component';
 import { VenueListComponent } from './Views/venue-list/venue-list.component';
 import { LandingComponent } from './Views/landing/landing.component'; 
-import { NgModule } from '@angular/core';
+import { ManageTournamentsComponent } from './Views/manage-tournaments/manage-tournaments.component';
+
 
 
 export const routes: Routes = [
@@ -30,6 +31,7 @@ export const routes: Routes = [
     {path:"manage-coupon" , component:ManageCouponComponent},
     {path:"manage-courts" , component:ManageCourtsComponent},
     {path:"manage-payments" , component:ManagePaymentsComponent},
+    {path:"manage-tournament" , component:ManageTournamentsComponent},
     {path:"manage-users" , component:ManageUsersComponent},
     {path:"manage-venue" , component:ManageVenueComponent},
     {path:"tournaments" , component:TournamentListComponent},

@@ -4,15 +4,14 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../Services/login.service';
 
 @Component({
-  selector: 'app-manage-bookings',
+  selector: 'app-manage-tournaments',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './manage-bookings.component.html',
-  styleUrl: './manage-bookings.component.scss'
+  templateUrl: './manage-tournaments.component.html',
+  styleUrl: './manage-tournaments.component.scss'
 })
-
-export class ManageBookingsComponent {
-  constructor(private router: Router, private store:LoginService) { }
+export class ManageTournamentsComponent {
+  constructor(private router: Router,  private store:LoginService) { }
   btnClick(route: string){
     this.router.navigate([`${route}`]); 
   };

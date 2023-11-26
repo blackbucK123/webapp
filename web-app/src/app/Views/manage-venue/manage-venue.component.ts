@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './manage-venue.component.scss'
 })
 export class ManageVenueComponent {
-
+  
 }

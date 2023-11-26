@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { LoginService } from '../../Services/login.service';
 
 @Component({
   selector: 'app-venue-list',
@@ -10,8 +11,13 @@ import { Router } from '@angular/router';
   styleUrl: './venue-list.component.scss'
 })
 export class VenueListComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private store:LoginService) { }
   btnClick(){
     this.router.navigate(['/schedule']); 
   };
+  ngOnInit() {
+    if (this.store.loginStatus == 0) {
+       this.router.navigate(['/login']);
+    }
+ }
 }

@@ -15,8 +15,8 @@ import { HeaderComponent } from '../../Components/header/header.component';
 })
 export class LandingComponent {
   constructor(private router: Router) { }
-  btnClick(){
-    this.router.navigate(['/register']); 
+  btnClick(route: string){
+    this.router.navigate([`${route}`]); 
   };
   
 }
