@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { LoginService } from '../../Services/login.service';
+import { DataService } from '../../Services/data.service';
 
 @Component({
   selector: 'app-schedule',
@@ -11,8 +12,11 @@ import { LoginService } from '../../Services/login.service';
   styleUrl: './schedule.component.scss'
 })
 export class ScheduleComponent {
-  constructor(private router: Router, private store:LoginService) { }
-  btnClick(){
+  constructor(private router: Router, private store:LoginService, private data:DataService) { }
+  btnClick(venue: string, slot:string, price:number){
+    this.data.setVenue(venue);
+    this.data.setSlot(slot);
+    this.data.setPrice(price);
     this.router.navigate(['/booking']); 
   };
   ngOnInit() {

@@ -1,7 +1,7 @@
 <div class="container">
     <main>
-      <div class="py-2 mb-5 border-bottom">
-        <img class="d-block mt-4 mb-4 logo-img" src="../../../assets/logo.png" alt="" >
+      <div class="py-2 mb-3 border-bottom">
+   
         <h2>Booking confirmation</h2>
         
       </div>
@@ -14,27 +14,27 @@
             <div class="row g-3">
               <div class="col-sm-12">
                 <label for="firstName" class="form-label">Tournament</label>
-                <input type="text" class="form-control" id="tournament" placeholder="" value="1v1" disabled>
-              
+                <input type="text" class="form-control" id="tournament" placeholder="" [value]="data.tournament" disabled> 
+    
               </div>
   
             
               <div class="col-12">
                 <label for="username" class="form-label">Venue</label>
                 <div class="input-group has-validation">
-                  <input type="text" class="form-control" id="venue" placeholder=""  value="Gachibowli Stadium" disabled>
+                  <input type="text" class="form-control" id="venue" placeholder=""  [value]="data.venue" disabled>
                 
                 </div>
               </div>
   
               <div class="col-12">
                 <label for="time" class="form-label">Time</label>
-                <input type="text" class="form-control" id="time" placeholder="" value="12:00 PM" disabled>
+                <input type="text" class="form-control" id="time" placeholder="" [value]="data.slot" disabled>
              
               </div>
               <div class="col-12">
                 <label for="price" class="form-label">Amount</label>
-                <input type="text" class="form-control" id="price" placeholder="" value="Rs. 350/-" disabled>
+                <input type="text" class="form-control" id="price" placeholder="" [value]="data.price" disabled>
              
               </div>
   
@@ -46,15 +46,15 @@
   
             <div class="my-3">
               <div class="form-check">
-                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input"  checked required>
                 <label class="form-check-label" for="credit">Credit card</label>
               </div>
-              <div class="form-check">
-                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+              <div class="form-check ">
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required disabled>
                 <label class="form-check-label" for="debit">Debit card</label>
               </div>
-              <div class="form-check">
-                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <div class="form-check disabled">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required disabled>
                 <label class="form-check-label" for="paypal">UPI</label>
               </div>
             </div>
@@ -62,7 +62,7 @@
             <div class="row gy-3">
               <div class="col-md-6">
                 <label for="cc-name" class="form-label">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <input type="text" class="form-control" id="cc-name" placeholder="" required pattern="[a-zA-Z ]*">
                 <small class="text-body-secondary">Full name as displayed on card</small>
                 <div class="invalid-feedback">
                   Name on card is required
@@ -71,7 +71,7 @@
   
               <div class="col-md-6">
                 <label for="cc-number" class="form-label">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <input type="text" class="form-control" id="cc-number" placeholder="" required (keydown)="validateNumber($event)" minlength="16" maxlength="16">
                 <div class="invalid-feedback">
                   Credit card number is required
                 </div>
@@ -79,7 +79,7 @@
   
               <div class="col-md-3">
                 <label for="cc-expiration" class="form-label">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                <input type="text" class="form-control" id="cc-expiration" placeholder="" required  minlength="5" maxlength="5">
                 <div class="invalid-feedback">
                   Expiration date required
                 </div>
@@ -87,7 +87,7 @@
   
               <div class="col-md-3">
                 <label for="cc-cvv" class="form-label">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                <input type="text" class="form-control" #cccvv id="cc-cvv" placeholder="" (keyup.enter)="onEnter(cccvv.value)" (blur)="onEnter(cccvv.value)" required (keydown)="validateNumber($event)" minlength="3" maxlength="3">
                 <div class="invalid-feedback">
                   Security code required
                 </div>
@@ -95,26 +95,78 @@
             </div>
   
             <hr class="my-4">
-  
-            <button (click)="open(mymodal)" class="w-100 btn btn-dark w-50 py-2 rounded-pill" type="button">Continue to checkout</button>
+
+            <button [disabled]="!cccvv.value" (click)="timer(mymodal)" class="w-100 btn btn-dark w-50 py-2 rounded-pill" type="button">
+              
+              <span role="status ">Continue to checkout</span> 
+              <span *ngIf="display" class="spin spinner-border spinner-border-sm " aria-hidden="true"></span>
+            </button>
           </form>
         </div>
       </div>
       <ng-template #mymodal let-modal>
         
+
           
-            <div class="modal-content rounded-3 shadow" data-bs-backdrop="static">
-              <div class="border-bottom-0 text-center py-3">
-                <h1 class="modal-title fs-5 ">Payment Successfull</h1>
-                <img src="../../../assets/Checkmark.gif" class="check-mark" />
+            <div class="" tabindex="-1" role="dialog" id="modalSignin">
+              <div class="" role="document">
+                <div class="modal-content rounded-3 shadow">
+                  <div class="modal-header p-3 mb-3 border-bottom-0 d-flex header-container ">
+                    <img src="../../../assets/Checkmark.gif" class="check-mark mb-3" />
+                    <div class="d-flex w-90">
+                      
+                      <h3 class="fw-bold mb-0 fs-3 text-align-left">Booking Confirmed</h3><br />
+                      
+                    </div>
+                    
+                    <h5 class="fw-light mb-0 fs-5 text-align-left">Thank you for your purchase</h5>
+                  
+                    
+                  </div>
+                  
+                  <div class="modal-body p-5 pt-0">
+                    <hr class="my-3 mb-2">
+                    <ul class="d-grid gap-4 my-3 px-5 list-unstyled small">
+                      <li class="d-flex gap-4">
+                        <img src="../../../assets/trophy.png" class="trophy-icon booking-icon" />
+                        <div>
+                          <h5 class="mb-0">Tournament</h5>
+                          {{data.tournament}}
+                        </div>
+                      </li>
+                      <li class="d-flex gap-4">
+                        <img src="../../../assets/location.png" class="trophy-icon booking-icon" />
+                        <div>
+                          <h5 class="mb-0">Venue</h5>
+                          {{data.venue}}
+                        </div>
+                      </li>
+                      <li class="d-flex gap-4">
+                        <img src="../../../assets/calendar.png" class="trophy-icon booking-icon" />
+                        <div>
+                          <h5 class="mb-0">Slot</h5>
+                          {{data.slot}}
+                        </div>
+                      </li>
+                    </ul>
+                   
+                    <hr class="my-3">
+                      <div class="d-flex align-items-center qr-container">
+                        <span class="fs-6 fw-light booking-id">ABC45565645CDEF</span>
+                        <img src="../../../assets/QR.png" class="qr" />
+                      </div>
+                      <hr class="my-2 mb-2">
+                    
+                      <button (click)="btnClick()" class="w-100 mt-3 mb-2 btn btn-outline-dark rounded-pill" type="button">
+                        
+                        Go to Bookings
+                      </button>
+                    
+                  </div>
+                </div>
               </div>
-              <div class="modal-body text-center py-0">
-                <p>Redirecting in {{display}} seconds...</p>
-              </div>
-          
             </div>
-          
-       
+            
     </ng-template>
     </main>
  

@@ -1,10 +1,10 @@
 <div class="container d-flex align-items-center py-4 bg-body-tertiary h-100">
   <main class="form-signin w-50 m-auto">
       <form>
-        <img class="logo mb-4"  src="../../../assets/logo.png" alt="" >
+      
         <h1 class="h3 mb-3 fw-normal">Sign in</h1>
         <div class="form-floating">
-          <input type="mobile" class="form-control" id="floatingInput" placeholder="+9xx - 999 999 9999" required pattern="[- +()0-9]{10,12}" minlength="10" maxlength="10" (keydown)="validateNumber($event)">
+          <input type="mobile" class="form-control" id="floatingInput" placeholder="+9xx - 999 999 9999" required  minlength="10" maxlength="10" (keydown)="validateNumber($event)">
           <label for="floatingInput">Mobile</label>
         </div>
         <div class="form-floating">

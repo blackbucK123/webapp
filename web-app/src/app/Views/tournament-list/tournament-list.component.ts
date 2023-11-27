@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { LoginService } from '../../Services/login.service';
+import { DataService } from '../../Services/data.service';
 
 @Component({
   selector: 'app-tournament-list',
@@ -11,8 +12,9 @@ import { LoginService } from '../../Services/login.service';
   styleUrl: './tournament-list.component.scss'
 })
 export class TournamentListComponent {
-  constructor(private router: Router, private store:LoginService) { }
-  btnClick(){
+  constructor(private router: Router, private store:LoginService, private data:DataService) { }
+  btnClick(tournament: string){
+    this.data.setTournament(tournament);
     this.router.navigate(['/venues']); 
   };
   ngOnInit() {

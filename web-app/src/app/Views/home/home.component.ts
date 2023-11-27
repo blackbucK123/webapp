@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { JumbotronComponent } from '../../Components/jumbotron/jumbotron.component'
 import { LoginService } from '../../Services/login.service';
+import { DataService } from '../../Services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import { LoginService } from '../../Services/login.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  constructor(private router: Router,  private store:LoginService) { 
+  constructor(private router: Router,  private store:LoginService, public data:DataService) { 
     
   }
   ngOnInit() {
@@ -20,8 +21,8 @@ export class HomeComponent {
        this.router.navigate(['/login']);
     }
  }
-  btnClick(){
-    this.router.navigate(['/tournaments']); 
-  };
+ btnClick(route: string){
+  this.router.navigate([`${route}`]); 
+};
   
 }

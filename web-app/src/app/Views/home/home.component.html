@@ -27,19 +27,19 @@
           <img class="activity-icon" src="../../../assets/trophy.png" />
           <h2 class="fw-normal">Tournaments</h2>
           <p>Select the appropriate tournament</p>
-          <p><button class="custom-btn btn btn-dark btn-lg px-4 rounded-pill" (click)="btnClick()">View details </button></p>
+          <p><button class="custom-btn btn btn-dark btn-lg px-4 rounded-pill" (click)="btnClick('tournaments')">View details </button></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <img class="activity-icon" src="../../../assets/event.png" />
           <h2 class="fw-normal">Bookings</h2>
           <p>View/reschedule bookings</p>
-          <p><button class="custom-btn btn btn-dark btn-lg px-4 rounded-pill" (click)="btnClick()">View details </button></p>
+          <p><button [disabled]="!data.bookingConfirmed" class="custom-btn btn btn-dark btn-lg px-4 rounded-pill" (click)="btnClick('payment')">View details </button></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <img class="activity-icon" src="../../../assets/promo-code.png" />
           <h2 class="fw-normal">Coupons</h2>
           <p>Redeem/check offers</p>
-          <p><button class="custom-btn btn btn-dark btn-lg px-4 rounded-pill" (click)="btnClick()">View details </button></p>
+          <p><button class="custom-btn btn btn-dark btn-lg px-4 rounded-pill">View details </button></p>
         </div><!-- /.col-lg-4 -->
       </div>
   

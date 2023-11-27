@@ -22,4 +22,11 @@ logout(){
   this.store.setLoginStatus(0);
   this.router.navigate(['/login']); 
 }
+btnClick(){
+ if(this.store.loginStatus == 1){
+  this.router.navigate(['/home']); 
+ }else if(this.store.loginStatus == 0){
+  this.router.navigate(['/landing']); 
+ }
+};
 }

@@ -3,5 +3,27 @@
     width: 8%
 }
 .check-mark{
-    width: 15%;
+    width: 10%;
+    align-self: initial;
+    padding-right: 10px;
+}
+.spin{
+    margin-left: 10px;
+}
+.qr{
+    width:50%;
+}
+.booking-icon{
+    width:15%;
+}
+.qr-container{
+    flex-direction: column;
+    justify-content: center;
+}
+.header-container{
+    flex-direction: column;
+    align-items: center;
+}
+.booking-id{
+    text-decoration: underline;
 }

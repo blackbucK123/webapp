@@ -1,1 +1,101 @@
-<p>payments works!</p>
+<div class="container px-4 py-5" id="icon-grid">
+    <div class="py-2 mb-3 border-bottom">
+   
+        <h2>Bookings</h2>
+        
+      </div>
+<!-- 
+    <div class="row booking-container d-flex row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+  
+      <div class="col d-flex align-items-start">
+        
+        <div class="d-flex booking-code">
+            <span class="fs-5 fw-bold">ABC45565645CDEF</span>
+          <img src="../../../assets/QR.png" class="qr-img" />
+        </div>
+      </div>
+      <div class="col d-flex w-100 details-container">
+        <div class="row booking-container d-flex row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+            <div class="d-flex align-items-start">
+        
+                <div>
+                    
+                  <div class="booking-details-data d-flex w-100">
+                    <p class="booking-details fs-4 fw-semibold">Booking # <span class="fs-4 fw-light">001</span></p>
+                    <p class="booking-details  fs-4 fw-semibold">Booking Date <span class="fs-4 fw-light">11/25/2023</span></p>
+                   
+                  </div>
+                 
+                </div>
+              </div>
+              <div class="d-flex align-items-start">
+                
+                <div>
+                  
+                  <div class="booking-details-data d-flex w-100">
+                   
+                    <p class="booking-details  fs-4 fw-semibold">Tournament <span class="fs-4 fw-light">{{data.tournament}}</span></p>
+                    <p class="booking-details  fs-4 fw-semibold">Venue <span class="fs-4 fw-light">{{data.venue}}</span></p>
+                
+                  </div>
+                 
+                </div>
+              </div>
+              <div class="d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
+                <div>
+                  
+                  <div class="booking-details-data d-flex w-100">
+                   
+                    <p class="booking-details  fs-4 fw-semibold">Slot <span class="fs-4 fw-light">{{data.slot}}</span></p>
+                    <p class="booking-details fs-4 fw-semibold">Price <span class="fs-4 fw-light">{{data.price}}</span></p>
+                  </div>
+                 
+                </div>
+              </div>
+        </div>
+        
+      </div>
+   
+     
+      
+    </div> -->
+    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 border-bottom">
+        <div class="col d-flex flex-column align-items-center gap-2">
+          <h5 class="fw-semibold fs-5">ABC45565645CDEF</h5>
+          <img src="../../../assets/QR.png" class="qr-img" />
+          <div class="d-flex w-100 gap-2 align-items-center justify-content-center">
+            <a href="#" class="btn btn-dark rounded-pill btn-sm">Mail details</a> <a href="#" class="btn btn-outline-dark rounded-pill btn-sm">SMS details</a>
+          </div>
+          
+        </div>
+  
+        <div class="col ">
+          <div class="row row-cols-1 row-cols-sm-2 g-4">
+            <div class="col d-flex flex-column gap-2">
+            
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Tournament</h4>
+              <p class="text-body-secondary">{{data.tournament}}</p>
+            </div>
+  
+            <div class="col d-flex flex-column gap-2">
+             
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Venue</h4>
+              <p class="text-body-secondary">{{data.venue}}</p>
+            </div>
+  
+            <div class="col d-flex flex-column gap-2">
+          
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Date</h4>
+              <p class="text-body-secondary">11/25/2023</p>
+            </div>
+  
+            <div class="col d-flex flex-column gap-2 ">
+             
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Slot</h4>
+              <p class="text-body-secondary">{{data.slot}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
