@@ -1,0 +1,58 @@
+<div class="container">
+    <main>
+ 
+      <div class="container py-4">
+        <div class="py-2 mb-3 border-bottom">
+   
+          <h2>Coupons</h2>
+          
+        </div>
+
+          <ul class="list-group" *ngIf="data.coupon_count < 1">
+            <li class="list-group-item list-group-item-secondary">No Coupons Available</li>
+            <li class="list-group-item">
+                <strong class="fs-2">If booking count > 5 = 1 Coupon</strong> <br /> 
+            </li>
+            <li class="list-group-item "><span class="fw-light fs-6">Current booking count = 3</span></li>
+          </ul>
+          
+          <div *ngIf="data.coupon_count > 0" class="table-responsive large">
+            <table class="table table-striped table-lg">
+              <thead>
+                <tr class="row-item-success">
+                  <th scope="col">Coupon ID</th>
+                  <th scope="col">Player Name</th>
+                  <th scope="col">Date of Issue</th>
+                  <th scope="col" style="text-align: center;">Redeemed</th>
+                  <th scope="col" colspan="5" style="text-align: center;">Tournaments</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let coupon of data.user_coupon_data">
+                  <td >{{ coupon.couponID }}</td>
+                  <td >{{ coupon.firstName }} &nbsp; {{ coupon.lastName }}</td>
+                  <td >{{ coupon.couponDate }}</td>
+                  
+                  <td style="text-align:center" *ngIf="coupon.isRedeemed">Yes</td>
+                  <td style="text-align:center" *ngIf="!coupon.isRedeemed">
+                    <div class="d-flex w-100 gap-2 align-items-center justify-content-center">
+                      <a class="btn btn-dark rounded-pill btn-sm" (click)="redeemNow(coupon.couponID)">Redeem Now</a> 
+                    </div>
+                  </td>
+
+                  <ng-container *ngFor="let booking of coupon.bookingData" style="border-left: 3px solid white; text-align: center; display: flex; flex-direction: column;" >
+                    <td colspan="1" style="border-left: 3px solid white; text-align: center;">
+                      
+                      <span>{{ booking.tournamentName }}</span><br />
+                      <span style="font-size: small; font-weight: 200;"> {{ booking.bookingDate }} </span><br />
+                    </td>
+                  </ng-container>
+                 
+                </tr> 
+                
+              </tbody>
+            </table>
+          </div>
+          
+    </div>

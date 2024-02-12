@@ -4,22 +4,27 @@
       
         <h1 class="h3 mb-3 fw-normal">Sign in</h1>
         <div class="form-floating">
-          <input type="mobile" class="form-control" id="floatingInput" placeholder="+9xx - 999 999 9999" required  minlength="10" maxlength="10" (keydown)="validateNumber($event)">
+          <input type="mobile" class="form-control" id="floatingInput" placeholder="+9xx - 999 999 9999" required  minlength="10" maxlength="10" (keydown)="validateNumber()" [(ngModel)]="mobileNumber" [ngModelOptions]="{standalone: true}">
           <label for="floatingInput">Mobile</label>
         </div>
-        <div class="form-floating">
-          <input type="password" class="form-control"  id="floatingPassword" placeholder="Password" #box (keyup.enter)="onEnter(box.value)" (blur)="onEnter(box.value)" minlength="6" maxlength="6" (keydown)="validateNumber($event)">
+        <div class="form-floating my-1">
+          <input type="password" class="form-control" [disabled]="!showOTP"  id="floatingPassword" placeholder="Password" #box (keyup.enter)="onEnter(box.value)" (blur)="onEnter(box.value)" minlength="6" maxlength="6" (keydown)="clearError()" >
           <label for="floatingPassword">OTP</label>
         </div>
-    
-        <div class="form-check text-start my-3">
-          
+        <div *ngIf="this.error.length > 0" class="form-floating">
+          <span class="error-msg">{{this.error}}</span>
+        </div>
+        <div *ngIf="this.info.length > 0" class="form-floating">
+          <span class="info-msg">{{this.info}}</span>
+        </div>
+        <div class="text-start my-3">
+          <input class="check-admin" type="checkbox" id="flexCheckDefault" [(ngModel)]="admin" [ngModelOptions]="{standalone: true}" />
           <label class="form-check-label" for="flexCheckDefault">
-        
+          Admin
           </label>
         </div>
         <div class="btn-grp">
-          <button class="custom-btn btn btn-dark w-50 py-2 rounded-pill" [disabled]="!box.value" type="button" (click)="btnClick()">
+          <button class="custom-btn btn btn-dark w-50 py-2 rounded-pill" [disabled]="box.value.length < 6" type="button" (click)="btnClick()">
             <span role="status ">Login</span> 
             <span *ngIf="display" class="spin spinner-border spinner-border-sm " aria-hidden="true"></span>
           </button>

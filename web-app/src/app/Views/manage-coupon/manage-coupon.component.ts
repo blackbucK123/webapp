@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { LoginService } from '../../Services/login.service';
+import { DataService } from '../../Services/data.service';
 
 @Component({
   selector: 'app-manage-coupon',
@@ -11,7 +12,7 @@ import { LoginService } from '../../Services/login.service';
   styleUrl: './manage-coupon.component.scss'
 })
 export class ManageCouponComponent {
-  constructor(private router: Router, private store:LoginService) { }
+  constructor(private router: Router, private store:LoginService, public data:DataService) { }
   btnClick(route: string){
     this.router.navigate([`${route}`]); 
   };

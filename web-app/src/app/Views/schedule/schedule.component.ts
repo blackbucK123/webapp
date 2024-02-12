@@ -13,7 +13,7 @@ import { DataService } from '../../Services/data.service';
 })
 export class ScheduleComponent {
   constructor(private router: Router, private store:LoginService, private data:DataService) { }
-  btnClick(venue: string, slot:string, price:number){
+  btnClick(venue: string, slot:string, price:string){
     this.data.setVenue(venue);
     this.data.setSlot(slot);
     this.data.setPrice(price);

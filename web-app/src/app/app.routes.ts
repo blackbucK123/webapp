@@ -17,6 +17,7 @@ import { TournamentListComponent } from './Views/tournament-list/tournament-list
 import { VenueListComponent } from './Views/venue-list/venue-list.component';
 import { LandingComponent } from './Views/landing/landing.component'; 
 import { ManageTournamentsComponent } from './Views/manage-tournaments/manage-tournaments.component';
+import {CouponsComponent} from './Views/coupons/coupons.component';
 
 
 
@@ -26,12 +27,13 @@ export const routes: Routes = [
     {path:"register" , component:RegisterComponent},
     {path:"login" , component:LoginComponent},
     {path:"home" , component:HomeComponent},
+    {path:"coupon", component:CouponsComponent},
     {path:"dashboard" , component:DashboardComponent},
     {path:"manage-bookings" , component:ManageBookingsComponent},
     {path:"manage-coupon" , component:ManageCouponComponent},
     {path:"manage-courts" , component:ManageCourtsComponent},
     {path:"manage-payments" , component:ManagePaymentsComponent},
-    {path:"manage-tournament" , component:ManageTournamentsComponent},
+    {path:"manage-slots" , component:ManageTournamentsComponent},
     {path:"manage-users" , component:ManageUsersComponent},
     {path:"manage-venue" , component:ManageVenueComponent},
     {path:"tournaments" , component:TournamentListComponent},

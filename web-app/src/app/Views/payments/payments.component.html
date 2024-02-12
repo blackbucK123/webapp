@@ -4,98 +4,37 @@
         <h2>Bookings</h2>
         
       </div>
-<!-- 
-    <div class="row booking-container d-flex row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-  
-      <div class="col d-flex align-items-start">
-        
-        <div class="d-flex booking-code">
-            <span class="fs-5 fw-bold">ABC45565645CDEF</span>
-          <img src="../../../assets/QR.png" class="qr-img" />
-        </div>
-      </div>
-      <div class="col d-flex w-100 details-container">
-        <div class="row booking-container d-flex row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-            <div class="d-flex align-items-start">
-        
-                <div>
-                    
-                  <div class="booking-details-data d-flex w-100">
-                    <p class="booking-details fs-4 fw-semibold">Booking # <span class="fs-4 fw-light">001</span></p>
-                    <p class="booking-details  fs-4 fw-semibold">Booking Date <span class="fs-4 fw-light">11/25/2023</span></p>
-                   
-                  </div>
-                 
-                </div>
-              </div>
-              <div class="d-flex align-items-start">
-                
-                <div>
-                  
-                  <div class="booking-details-data d-flex w-100">
-                   
-                    <p class="booking-details  fs-4 fw-semibold">Tournament <span class="fs-4 fw-light">{{data.tournament}}</span></p>
-                    <p class="booking-details  fs-4 fw-semibold">Venue <span class="fs-4 fw-light">{{data.venue}}</span></p>
-                
-                  </div>
-                 
-                </div>
-              </div>
-              <div class="d-flex align-items-start">
-                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
-                <div>
-                  
-                  <div class="booking-details-data d-flex w-100">
-                   
-                    <p class="booking-details  fs-4 fw-semibold">Slot <span class="fs-4 fw-light">{{data.slot}}</span></p>
-                    <p class="booking-details fs-4 fw-semibold">Price <span class="fs-4 fw-light">{{data.price}}</span></p>
-                  </div>
-                 
-                </div>
-              </div>
-        </div>
-        
-      </div>
-   
-     
-      
-    </div> -->
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 border-bottom">
-        <div class="col d-flex flex-column align-items-center gap-2">
-          <h5 class="fw-semibold fs-5">ABC45565645CDEF</h5>
-          <img src="../../../assets/QR.png" class="qr-img" />
-          <div class="d-flex w-100 gap-2 align-items-center justify-content-center">
-            <a href="#" class="btn btn-dark rounded-pill btn-sm">Mail details</a> <a href="#" class="btn btn-outline-dark rounded-pill btn-sm">SMS details</a>
-          </div>
-          
-        </div>
-  
-        <div class="col ">
-          <div class="row row-cols-1 row-cols-sm-2 g-4">
-            <div class="col d-flex flex-column gap-2">
+
+      <div class="table-responsive large" >
+        <table class="table table-striped table-lg" style="table-layout: fixed; width: 100%;">
+          <thead>
+            <tr class="row-item-success" >
+              <th scope="col"  style="text-align:center">Booking ID</th>
+              <th scope="col" style="text-align:center">Venue</th>
+              <th scope="col" style="text-align:center">Court</th>
+              <th scope="col" style="text-align:center">Slot</th>
+              <th scope="col" style="text-align:center">Amount</th>
+              
+              <th scope="col" colspan="1" style="text-align:center">Tournament</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of data.user_booking_data" >
+              <td style="text-align:center">{{ booking.bookingID }}</td>     
+              <td style="text-align:center">{{ booking.venueName }}</td>  
+              <td style="text-align:center">{{ booking.courtName }}</td>  
+              <td style="text-align:center">{{ booking.slot }}</td>  
+              <td style="text-align:center">{{ booking.amount }}</td>         
+              <td style="border-left: 3px solid white; text-align: center;">
+                <span><img src="../../../assets/trophy.png" class="tropy-img" style="width: 36px;"/></span><br />
+                <span>{{ booking.tournamentName }}</span><br />
+                <span style="font-size: small; font-weight: 200;"> {{ booking.bookingDate }} </span><br />
+              </td>
+            </tr> 
             
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Tournament</h4>
-              <p class="text-body-secondary">{{data.tournament}}</p>
-            </div>
-  
-            <div class="col d-flex flex-column gap-2">
-             
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Venue</h4>
-              <p class="text-body-secondary">{{data.venue}}</p>
-            </div>
-  
-            <div class="col d-flex flex-column gap-2">
-          
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Date</h4>
-              <p class="text-body-secondary">11/25/2023</p>
-            </div>
-  
-            <div class="col d-flex flex-column gap-2 ">
-             
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Slot</h4>
-              <p class="text-body-secondary">{{data.slot}}</p>
-            </div>
-          </div>
-        </div>
+          </tbody>
+        </table>
       </div>
-  </div>
+  
+    </div>

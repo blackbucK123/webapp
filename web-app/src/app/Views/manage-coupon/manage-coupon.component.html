@@ -29,12 +29,45 @@
             </div>
           </div>
  -->
-          <ul class="list-group">
+          <ul class="list-group" *ngIf="data.coupon_count < 1">
             <li class="list-group-item list-group-item-secondary">No Coupons Available</li>
             <li class="list-group-item">
                 <strong class="fs-2">If booking count > 5 = 1 Coupon</strong> <br /> 
             </li>
             <li class="list-group-item "><span class="fw-light fs-6">Current booking count = 3</span></li>
           </ul>
+          
+          <div *ngIf="data.coupon_count > 0" class="table-responsive large">
+            <table class="table table-striped table-lg">
+              <thead>
+                <tr class="row-item-success">
+                  <th scope="col">Coupon ID</th>
+                  <th scope="col">Player Name</th>
+                  <th scope="col">Date of Issue</th>
+                  <th scope="col">Redeemed</th>
+                  <th scope="col" colspan="5" style="text-align: center;">Tournaments</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let coupon of data.coupon_data">
+                  <td >{{ coupon.couponID }}</td>
+                  <td >{{ coupon.firstName }} &nbsp; {{ coupon.lastName }}</td>
+                  <td >{{ coupon.couponDate }}</td>
+                  <td *ngIf="coupon.isRedeemed">Yes</td>
+                  <td *ngIf="!coupon.isRedeemed">No</td>
+                  <ng-container *ngFor="let booking of coupon.bookingData" style="border-left: 3px solid white; text-align: center; display: flex; flex-direction: column;" >
+                    <td colspan="1" style="border-left: 3px solid white; text-align: center;">
+                      <span><img src="../../../assets/trophy.png" class="tropy-img" style="width: 36px;"/></span><br />
+                      <span>{{ booking.tournamentName }}</span><br />
+                      <span style="font-size: small; font-weight: 200;"> {{ booking.bookingDate }} </span><br />
+                    </td>
+                  </ng-container>
+                 
+                </tr> 
+                
+              </tbody>
+            </table>
+          </div>
           
     </div>

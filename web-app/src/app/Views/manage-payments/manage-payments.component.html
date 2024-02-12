@@ -25,25 +25,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Shouri</td>
-                  <td>Singaraju</td>
-                  <td>350</td>
-                  <td>11/25/2023</td>
-                </tr>
-                <tr>
-                  <td>Rahul</td>
-                  <td>Rao</td>
-                  <td>400</td>
-                  <td>11/26/2023</td>
-                </tr>
-                <tr>
-                  <td>Naveen</td>
-                  <td>Agarwal</td>
-                  <td>500</td>
-                  <td>11/25/2023</td>
-                </tr>
-          
+                <tr *ngFor="let payment of data.payment_data">
+                  <td>{{ payment.firstName }}</td>
+                  <td>{{ payment.lastName }}</td>
+                  <td>{{ payment.amount }}</td>
+                  <td>{{ payment.bookingDate }}</td>
+                </tr> 
               </tbody>
             </table>
           </div>

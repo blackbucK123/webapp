@@ -13,8 +13,11 @@ import { DataService } from '../../Services/data.service';
 })
 export class VenueListComponent {
   constructor(private router: Router, private store:LoginService, private data:DataService) { }
-  btnClick(venue:string){
+  btnClick(venue:string, venueID: number, courtID: number, courtName: string){
     this.data.setVenue(venue);
+    this.data.setVenueID(venueID);
+    this.data.setCourt(courtName);
+    this.data.setCourtID(courtID);
     this.router.navigate(['/schedule']); 
   };
   ngOnInit() {

@@ -33,13 +33,13 @@
             <img class="activity-icon" src="../../../assets/event.png" />
           <h2 class="fw-normal">Bookings</h2>
           <p>View/reschedule bookings</p>
-          <p><button [disabled]="!data.bookingConfirmed" class="custom-btn btn btn-dark btn-lg px-4 rounded-pill" (click)="btnClick('payment')">View details </button></p>
+          <p><button [disabled]="data.user_booking_data.length === 0" class="custom-btn btn btn-dark btn-lg px-4 rounded-pill" (click)="btnClick('payment')">View details </button></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-            <img class="activity-icon" src="../../../assets/promo-code.png" />
+          <img class="activity-icon" src="../../../assets/promo-code.png" />
           <h2 class="fw-normal">Coupons</h2>
           <p>Redeem/check offers</p>
-          <p><button class="custom-btn btn btn-dark btn-lg px-4 rounded-pill">View details </button></p>
+          <p><button (click)="btnClick('coupon')" class="custom-btn btn btn-dark btn-lg px-4 rounded-pill">View details </button></p>
         </div><!-- /.col-lg-4 -->
       </div>
   

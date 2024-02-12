@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { JumbotronComponent } from '../../Components/jumbotron/jumbotron.component'
 import { LoginService } from '../../Services/login.service';
 import { DataService } from '../../Services/data.service';
+import { BackendService } from '../../Services/backend.service';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,26 @@ import { DataService } from '../../Services/data.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  constructor(private router: Router,  private store:LoginService, public data:DataService) { 
-    
+  constructor(private router: Router,  private store:LoginService, public data:DataService, public backend:BackendService) { 
+    if(!!this.data.current_user.userID){
+      this.backend.getUserBookings(this.data.current_user.userID)
+      .subscribe(booking_data => {
+        this.data.user_booking_data = booking_data.data[0]
+        if(!!this.data.user_booking_data){
+          // console.log(JSON.stringify(this.data.user_booking_data))
+        }
+      }
+      );
+      this.backend.getUserCoupons(this.data.current_user.userID)
+      .subscribe(coupon_data => {
+        this.data.user_coupon_data = coupon_data
+        if(!!this.data.user_coupon_data){
+          // console.log(JSON.stringify(this.data.user_coupon_data))
+          this.data.coupon_count = this.data.user_coupon_data.length
+        }
+      }
+      );
+    }
   }
   ngOnInit() {
     if (this.store.loginStatus == 0) {

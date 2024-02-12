@@ -27,31 +27,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>001</td>
-                  <td>Shouri</td>
-                  <td>1v1</td>
-                  <td>6281353466</td>
-                  <td>Gachibowli Stadium</td>
-                  <td>Court 1</td>
-                </tr>
-                <tr>
-                  <td>002</td>
-                  <td>Rahul</td>
-                  <td>3 Points</td>
-                  <td>7675826374</td>
-                  <td>Apollo Banjara Club</td>
-                  <td>Court 2</td>
-                </tr>
-                <tr>
-                  <td>003</td>
-                  <td>Naveen</td>
-                  <td>Dunk</td>
-                  <td>9968726475</td>
-                  <td>Jubilee Hills Basketball Club</td>
-                  <td>Court 1</td>
-                </tr>
-          
+                <tr *ngFor="let booking of data.booking_data">
+                  <td>{{ booking.bookingID }}</td>
+                  <td>{{ booking.firstName }}</td>
+                  <td>{{ booking.tournamentName }}</td>
+                  <td>{{ booking.mobile }}</td>
+                  <td>{{ booking.venueName }}</td>
+                  <td>{{ booking.courtName }}</td>
+                </tr>           
               </tbody>
             </table>
           </div>

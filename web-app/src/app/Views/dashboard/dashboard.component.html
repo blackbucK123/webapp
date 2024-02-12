@@ -15,7 +15,7 @@
                 <div class="row align-items-md-stretch">
                     <div class="h-50 p-5 bg-body-tertiary border rounded-3">
                         <h4>Users</h4>
-                        <h1 class="card-title pricing-card-title">+<small class="text-body-secondary fw-light"> 2</small></h1>
+                        <h1 class="card-title pricing-card-title">+<small class="text-body-secondary fw-light"> {{dashboard_data.user_count}}</small></h1>
                         <p> New users added, please click to view/manage</p>
                         <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-users')">View/Manage</button>
                       </div>
@@ -23,7 +23,7 @@
                 <div class="row align-items-md-stretch">
                     <div class="h-50 p-5 bg-body-tertiary border rounded-3">
                         <h4>Offers/Coupons</h4>
-                        <h1 class="card-title pricing-card-title">+<small class="text-body-secondary fw-light">0</small></h1>
+                        <h1 class="card-title pricing-card-title">+<small class="text-body-secondary fw-light">{{dashboard_data.coupon_count}}</small></h1>
                         <p> Please click to view new offers/coupons</p>
                         <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-coupon')">View</button>
                       </div>
@@ -34,7 +34,7 @@
             <div class="h-100 p-5 text-bg-dark rounded-3 booking-text">
               <h1>Bookings</h1>
               <div>
-                <span class="booking-number card-title pricing-card-title ">+<span class="text-body-light fw-light ">3</span></span>
+                <span class="booking-number card-title pricing-card-title ">+<span class="text-body-light fw-light ">{{dashboard_data.booking_count}}</span></span>
                 <h5 class="text-body-light fw-light py-2">New bookings added, please <br /> click to view</h5>
                 <button class="btn btn-outline-light rounded-pill btn-lg" type="button" (click)="btnClick('manage-bookings')">View</button>
               </div>
@@ -47,7 +47,7 @@
                 <div class="col-md-8 h-100 py-3 px-3 button-legend-col1">
                     <h2>Slots</h2>
                     <p></p>
-                    <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-tournament')">View</button>
+                    <button class="btn btn-sm btn-outline-dark rounded-pill" type="button" (click)="btnClick('manage-slots')">View</button>
                   </div>
                   <div class="col-md-4 h-100 button-legend-col2">
                     <img class="legend-icon" src="../../../assets/calendar.png" />
