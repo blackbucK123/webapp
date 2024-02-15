@@ -1,11 +1,13 @@
 
-<header class="p-3 text-bg-dark">
-    <div class="container-fluid">
-      <div class="d-flex flex-wrap align-items-center justify-content-center ">
-        <h1>Heart Of Everything</h1>
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom text-bg-dark">
+  <div class="col-md-3 mb-2 mb-md-0">
+    <a (click)="btnClick()" class="d-inline-flex link-body-emphasis text-decoration-none px-5">
+      <img src="../../../assets/logo.png" class="logo-img" />
+    </a>
+  </div>
 
-        
-
-      </div>
-    </div>
-  </header>
+<h1>Heart Over Everything</h1>
+<div class="col-md-3 mb-2 mb-md-0 second-logo-cotainer px-5 ">
+  <button *ngIf="store.loginStatus==1" type="button" class="btn btn-lg  btn-outline-light me-2 rounded-pill" (click)="logout()">Logout</button>
+</div>
+</header>
