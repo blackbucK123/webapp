@@ -45,7 +45,7 @@ export class RegisterComponent {
   };
   register(){
     if(this.attempt < 3){
-      this.backend.verifyOTP(this.value)
+      this.backend.verifyOTP(this.value, this.mobileNumber)
       .subscribe(data => {
         this.status = data
         if(this.status !== 'approved'){
@@ -63,10 +63,10 @@ export class RegisterComponent {
     console.log(this.mobileNumber);
     console.log(this.firstname);
     console.log(this.lastname);
-    if(this.mobileNumber.length === 9 && this.firstname.length > 0 && this.lastname.length > 0){
+    if(this.mobileNumber.length === 10 && this.firstname.length > 0 && this.lastname.length > 0){
       this.showOTP = true;
       this.info = 'OTP is sent to your mobile number.'
-      this.backend.sendOTP()
+      this.backend.sendOTP(this.mobileNumber)
       .subscribe(data =>{
         this.status = data
         console.log(this.status);

@@ -69,17 +69,17 @@ export class BackendService {
         //To-Do
       );
   }
-  sendOTP(){
+  sendOTP(mobile: any){
     const httpOptions = {
       headers: new HttpHeaders({ 'accept': 'application/json' })
     };
-    return this.http.post<any>(`${this.apiUrl}/otp/`, httpOptions)
+    return this.http.post<any>(`${this.apiUrl}/otp/?mobile_number=${mobile}`, httpOptions)
       .pipe(
         //To-Do
       );
   }
-  verifyOTP(otp: any){
-    return this.http.get<any>(`${this.apiUrl}/otp/?otp_code=${otp}`);
+  verifyOTP(otp: any, mobile: any){
+    return this.http.get<any>(`${this.apiUrl}/otp/?otp_code=${otp}&mobile_number=${mobile}`);
   }
 
   addUser(user: User){

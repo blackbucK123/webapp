@@ -37,7 +37,7 @@ export class LoginComponent {
   }
   btnClick(){
     if(this.attempt < 3){
-      this.backend.verifyOTP(this.value)
+      this.backend.verifyOTP(this.value, this.mobileNumber)
       .subscribe(data => {
         this.status = data
         if(this.status !== 'approved'){
@@ -92,10 +92,11 @@ export class LoginComponent {
     }
   }
   validateNumber() {
-      if(this.mobileNumber.length === 9){
+      if(this.mobileNumber.length === 10){
         this.showOTP = true;
         this.info = 'OTP is sent to your mobile number.'
-        this.backend.sendOTP()
+        console.log(this.mobileNumber)
+        this.backend.sendOTP(this.mobileNumber)
         .subscribe(data =>{
           this.status = data
           console.log(this.status);

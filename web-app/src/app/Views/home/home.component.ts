@@ -18,9 +18,9 @@ export class HomeComponent {
     if(!!this.data.current_user.userID){
       this.backend.getUserBookings(this.data.current_user.userID)
       .subscribe(booking_data => {
-        this.data.user_booking_data = booking_data.data[0]
+        if(!!booking_data.data){this.data.user_booking_data = booking_data.data[0]}
         if(!!this.data.user_booking_data){
-          // console.log(JSON.stringify(this.data.user_booking_data))
+          // console.log(JSON.stringify(this.data.user_booking_data.length))
         }
       }
       );

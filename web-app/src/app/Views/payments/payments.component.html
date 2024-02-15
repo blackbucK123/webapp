@@ -4,8 +4,11 @@
         <h2>Bookings</h2>
         
       </div>
-
-      <div class="table-responsive large" >
+      
+      <ul class="list-group" *ngIf="!this.data.user_booking_data[0].bookingID">
+        <li class="list-group-item list-group-item-secondary">No Bookings Available</li>       
+      </ul>
+      <div class="table-responsive large" *ngIf="!!this.data.user_booking_data[0].bookingID">
         <table class="table table-striped table-lg" style="table-layout: fixed; width: 100%;">
           <thead>
             <tr class="row-item-success" >

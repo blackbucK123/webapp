@@ -47,7 +47,7 @@ export class DashboardComponent {
   getCouponData(){
     this.backend.getCoupons()
     .subscribe(data =>  {
-      this.data.coupon_data = [data]
+      this.data.coupon_data = data
       if(this.data.coupon_data){
         console.log(JSON.stringify(this.data.coupon_data));
         return
